@@ -1,5 +1,6 @@
 import { Component } from "react";
-import CardList from "./components/card-list";
+import CardList from "./components/card-list/card-list.component";
+import SearchBox from "./components/search-box/search-box.component";
 import "./App.css";
 
 class App extends Component {
@@ -12,7 +13,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(
+      "https://gist.githubusercontent.com/gobi-gb/8059bc1514e18fb077270d87bcd22ec3/raw/d8ff6ee82e38b0c8c99ad62962a3649de304f83b/boys.json"
+    )
       .then((res) => res.json())
       .then((users) => {
         this.setState(() => {
@@ -36,11 +39,11 @@ class App extends Component {
     });
     return (
       <div className="App">
-        <input
-          className="search-box"
-          type="search"
+        <h1 className="title">EEE Boys</h1>
+        <SearchBox
+          className="boys-search-box"
           placeholder="Search Boys"
-          onChange={onSearchChange}
+          onChangeHandler={onSearchChange}
         />
         <CardList boys={filteredBoys} />
       </div>
