@@ -39,7 +39,7 @@ class App extends Component {
     });
     return (
       <div className="App">
-        <h1 className="title">EEE Boys</h1>
+        <h1 className="title">Psych Boys</h1>
         <SearchBox
           className="boys-search-box"
           placeholder="Search Boys"
